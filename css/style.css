@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik+Puddles&display=swap");
+
+body {
+	margin: 0;
+	background-color: blue;
+}
+
+/* ======================================== */
+/* --------------- Page Header -------------*/
+/* ======================================== */
+
+.pg-nav {
+	position: fixed;
+	background-color: black;
+	color: snow;
+	display: flex;
+	justify-content: center;
+	/* flex-direction: row; */
+	flex-wrap: wrap;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+	/* align-items: center; */
+}
+
+.pg-nav ul {
+	list-style: none;
+	display: block;
+	padding: 0;
+	/* width: 100%; */
+}
+
+.pg-nav ul:last-child {
+	width: 100%;
+	flex-basis: 100%;
+}
+
+.pg-nav ul li {
+	display: inline-flex;
+	margin-bottom: 0;
+	width: 100%;
+	text-align: center;
+	padding: 0.25em 0 0.25em;
+	justify-content: center;
+}
+
+.pg-nav ul li a {
+	color: white;
+}
+
+input[type="checkbox"]:not(:checked) + ul {
+	display: none;
+}
+
+nav label {
+	font-size: 30px;
+	text-align: center;
+	display: block;
+	padding: 0 0.3em;
+	margin: 0.5em;
+	/* line-height: 1.6em; */
+	align-self: center;
+	border: solid 1px white;
+	border-radius: 50%;
+}
+
+nav input[type="checkbox"] {
+	display: none;
+}
+
+/* ======================================== */
+/* -------------- Hero section -------------*/
+/* ======================================== */
+
+#hero,
+#hero * {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+	width: 100%;
+	height: auto;
+}
+
+#hero {
+	padding-top: 66px;
+}
+
+#hero figure {
+	position: sticky;
+	z-index: -10;
+	top: 66px;
+}
+
+#hero h1 {
+	font-family: "Rubik Puddles", system-ui;
+	font-size: 45px;
+	color: #fff;Portriate
+}
