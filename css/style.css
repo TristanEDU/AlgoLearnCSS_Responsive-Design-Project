@@ -1,99 +1,271 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik+Puddles&display=swap");
 
-body {
-	margin: 0;
-	background-color: blue;
+:root {
+  --card-height: 55dvh;
+  --peek: 8dvh; /* how much each back card peeks above the one in front */
 }
+
+html,
+body {
+  /* overflow-x: hidden; */
+  overscroll-behavior-x: none;
+  /* overscroll-behavior: none; */
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  text-align: justify;
+  font-size: 1.2rem;
+  min-height: 100dvh;
+  max-width: 100dvw;
+  /* position: sticky; */
+  /* top: 66px; */
+  /* scroll-snap-type: mandatory; */
+  /* scroll-snap-align: start; */
+  /* overflow-y: scroll; */
+  /* scroll-snap-type: y mandatory; */
+}
+
+/* body::-webkit-scrollbar {
+  display: none;
+} */
 
 /* ======================================== */
 /* --------------- Page Header -------------*/
 /* ======================================== */
 
 .pg-nav {
-	position: fixed;
-	background-color: black;
-	color: snow;
-	display: flex;
-	justify-content: center;
-	/* flex-direction: row; */
-	flex-wrap: wrap;
-	margin-left: 0;
-	margin-right: 0;
-	width: 100%;
-	/* align-items: center; */
+  position: fixed;
+  background-color: black;
+  color: snow;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  /* align-items: center; */
 }
 
 .pg-nav ul {
-	list-style: none;
-	display: block;
-	padding: 0;
-	/* width: 100%; */
+  list-style: none;
+  display: block;
+  padding: 0;
+  /* width: 100%; */
 }
 
 .pg-nav ul:last-child {
-	width: 100%;
-	flex-basis: 100%;
+  width: 100%;
+  flex-basis: 100%;
 }
 
 .pg-nav ul li {
-	display: inline-flex;
-	margin-bottom: 0;
-	width: 100%;
-	text-align: center;
-	padding: 0.25em 0 0.25em;
-	justify-content: center;
+  display: inline-flex;
+  margin-bottom: 0;
+  width: 100%;
+  /* text-align: center; */
+  padding: 0.25em 0 0.25em;
+  justify-content: center;
 }
 
 .pg-nav ul li a {
-	color: white;
+  color: white;
 }
 
 input[type="checkbox"]:not(:checked) + ul {
-	display: none;
+  display: none;
 }
 
 nav label {
-	font-size: 30px;
-	text-align: center;
-	display: block;
-	padding: 0 0.3em;
-	margin: 0.5em;
-	/* line-height: 1.6em; */
-	align-self: center;
-	border: solid 1px white;
-	border-radius: 50%;
+  font-size: 30px;
+  text-align: center;
+  display: block;
+  padding: 0 0.3em;
+  margin: 0.5em;
+  /* line-height: 1.6em; */
+  align-self: center;
+  border: solid 1px white;
+  border-radius: 50%;
 }
 
 nav input[type="checkbox"] {
-	display: none;
+  display: none;
+}
+
+/* ======================================== */
+/* --------------- Main Styles -------------*/
+/* ======================================== */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 66px;
+  color: #fff;
+
+  /* width: 100dvw; */
 }
 
 /* ======================================== */
 /* -------------- Hero section -------------*/
 /* ======================================== */
 
-#hero,
-#hero * {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 0;
-	width: 100%;
-	height: auto;
-}
-
 #hero {
-	padding-top: 66px;
+  /* width: 100%; */
+  position: sticky;
+  /* bottom: ; */
+  top: 66px;
+  z-index: -10;
+  background-color: black;
+  height: 110dvh;
+  /* margin: 50px; */
+  /* overflow: hidden; */
 }
 
-#hero figure {
-	position: sticky;
-	z-index: -10;
-	top: 66px;
+#hero header figure {
+  margin: 0;
 }
 
-#hero h1 {
-	font-family: "Rubik Puddles", system-ui;
-	font-size: 45px;
-	color: #fff;Portriate
+#hero header figure img {
+  /* width: 70dvw; */
+  border-width: 30px;
+  border-style: dashed double none double;
+  border-color: darkblue;
+  /* box-sizing: 20px; */
+  border-radius: 50%;
+}
+
+#hero-header-text {
+  position: relative;
+  top: -150px;
+  text-align: center;
+}
+
+#hero-body-text {
+  /* position: sticky; */
+  padding: 0 15px;
+  margin-top: -70px;
+  font-size: 1.1em;
+}
+
+#hero-footer {
+  margin-top: 35px;
+}
+
+.btn {
+  padding: 20px;
+  margin: 20px;
+  border: solid 0;
+  border-radius: 25px;
+  color: #000;
+  text-decoration-line: none;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#hero-view-work-button {
+  background: conic-gradient(from 1800deg at 100% 100%, blue, red, white);
+}
+
+#hero-contact-me-button {
+  background-image: conic-gradient(at 0% 100%, white, blue, green);
+}
+
+/* ======================================== */
+/* ------- Featured projects section -------*/
+/* ======================================== */
+
+#featured-projects {
+  background-color: blue;
+  /* background-color: rgba(129, 183, 233, 0.068); */
+  margin-top: 100vh;
+  /* margin-bottom: 100dvh; */
+  position: sticky;
+  top: 66px;
+  box-shadow: 0 -30px 10px rgba(0, 0, 0, 0.74);
+  z-index: -9;
+  min-height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: solid 1px white; */
+}
+
+/* Container is exactly tall enough to show all three cards */
+#featured-projects-cards {
+  position: relative;
+  width: 90dvw;
+  /* front card height + two peeks above it */
+  height: calc(var(--card-height) + (0.5 * var(--peek)));
+  /* margin: 0 auto; */
+}
+
+.card {
+  position: absolute;
+  bottom: 0;
+  /* left: 50%; */
+  /* translate: -50% 0; */
+  width: 90dvw;
+  height: var(--card-height);
+  border: solid 6px gray;
+  border-radius: 20px;
+}
+
+/* Front card — largest, no upward shift */
+#featured-projects-card1 {
+  background-color: green;
+  /* bottom: 0; */
+  scale: 1;
+  /* z-index: 30; */
+}
+
+/* Middle card — slightly smaller, peeks one unit above front */
+#featured-projects-card2 {
+  background-color: orange;
+  bottom: calc(-1 * var(--peek)); /* pulls it up by one peek */
+  scale: 0.97;
+  /* z-index: 20; */
+}
+
+/* Back card — smallest, peeks two units above front */
+#featured-projects-card3 {
+  background-color: red;
+  bottom: calc(-2 * var(--peek)); /* pulls it up by two peeks */
+  scale: 0.94;
+  /* z-index: 10; */
+}
+
+.card img {
+  min-width: 100%;
+  height: auto;
+}
+
+/* ======================================== */
+/* ------------- Skills section ------------*/
+/* ======================================== */
+
+#skills-overview {
+  position: sticky;
+  background-color: red;
+  min-height: 90dvh;
+  min-width: 100dvw;
+  top: 66px;
+  z-index: -7;
+  /* border: solid 1px yellow; */
+}
+
+/* ======================================== */
+/* ------------- Footer section ------------*/
+/* ======================================== */
+
+#main-footer {
+  background-color: white;
+  position: sticky;
+  top: 100%;
+	/* border: Solid 1px green; */
+	color: #000;
 }
