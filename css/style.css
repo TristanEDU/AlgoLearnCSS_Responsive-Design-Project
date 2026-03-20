@@ -507,8 +507,35 @@ main {
 
 /* Desktops */
 @media (min-width: 1280px) {
-}
+  /* Container is exactly tall enough to show all three cards */
+  #featured-projects-cards {
+    position: relative;
 
-/* Large desktops / wide screens */
-@media (min-width: 1536px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* gap: 5%; */
+  }
+
+  .card {
+    position: static;
+  }
+
+  /* Front card — largest, no upward shift */
+  #featured-projects-card1 {
+    scale: 0.9;
+    transform: translate3d(2rem, -1rem, 2rem) skew(3deg, -2deg);
+  }
+
+  /* Middle card — slightly smaller, peeks one unit above front */
+  #featured-projects-card2 {
+    scale: 1;
+  }
+
+  /* Back card — smallest, peeks two units above front */
+  #featured-projects-card3 {
+    transform: translate3d(-2rem, -1rem, -2rem) skew(-3deg, 2deg);
+    scale: 0.9;
+		z-index: -9;
+  }
 }
